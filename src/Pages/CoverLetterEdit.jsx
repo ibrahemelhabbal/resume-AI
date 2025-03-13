@@ -92,7 +92,7 @@ const CoverLetterEdit = () => {
             <input
               type="text"
               name="job_post"
-              placeholder="Job Position"
+              placeholder="Job Post"
               className="border p-2 w-full"
               onChange={handleChange}
             />
