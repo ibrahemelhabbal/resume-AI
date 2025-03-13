@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Header from '../Pages/Header';
+import { useState } from 'react';
 import axios from 'axios';
 import { jsPDF } from 'jspdf';
 
@@ -144,7 +144,7 @@ const ResumeEdit = () => {
   };
 
   return (
-    <div className="absolute inset-0 h-full w-full bg-gray-100 print:bg-transparent">
+    <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#ede9fe_1px,transparent_1px),linear-gradient(to_bottom,#f3e8ff_1px,transparent_1px)] bg-[size:14px_24px] print:bg-transparent print:bg-none">
       <Header />
       <main className="py-12 px-6">
         <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8 flex">
@@ -158,54 +158,56 @@ const ResumeEdit = () => {
             <div className="space-y-4">
               {currentStep === 0 && (
                 <>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder="First Name"
-                    className="border p-2 w-full"
-                    value={resumeData.first_name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    name="last_name"
-                    placeholder="Last Name"
-                    className="border p-2 w-full"
-                    value={resumeData.last_name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    name="job_title"
-                    placeholder="Job Title"
-                    className="border p-2 w-full"
-                    value={resumeData.job_title}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Address"
-                    className="border p-2 w-full"
-                    value={resumeData.address}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    name="phone"
-                    placeholder="Phone"
-                    className="border p-2 w-full"
-                    value={resumeData.phone}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    className="border p-2 w-full"
-                    value={resumeData.email}
-                    onChange={handleChange}
-                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="First Name"
+                      className="border p-2 w-full"
+                      value={resumeData.first_name}
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      name="last_name"
+                      placeholder="Last Name"
+                      className="border p-2 w-full"
+                      value={resumeData.last_name}
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      name="job_title"
+                      placeholder="Job Title"
+                      className="border p-2 w-full"
+                      value={resumeData.job_title}
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="Address"
+                      className="border p-2 w-full"
+                      value={resumeData.address}
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Phone"
+                      className="border p-2 w-full"
+                      value={resumeData.phone}
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      className="border p-2 w-full"
+                      value={resumeData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </>
               )}
               {currentStep === 1 && (
