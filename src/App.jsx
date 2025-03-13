@@ -4,6 +4,7 @@ import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
 import Dashboard from './Pages/Dashboard';
 import CoverLetterEdit from './Pages/CoverLetterEdit';
+import ResumeEdit from './Pages/ResumeEdit';
 import Profile from './Pages/Profile';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cover-letter-edit/:id" element={<CoverLetterEdit />} />
+        <Route path="/resume-edit/:id" element={<ResumeEdit />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>

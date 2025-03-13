@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import PageWrapper from '../Pages/PageWrapper';
-import DashboardCards from '../Pages/DashboardCards';
-
+import ResumeCards from '../Pages/ResumeCards';
+import CoverLetterCards from './CoverLetterCards';
 import { Link } from 'react-router-dom';
+
 // Mock Header Component
 const Header = () => {
   return (
@@ -21,19 +23,41 @@ const Header = () => {
 };
 
 const Dashboard = () => {
+  const [activeTab, setActiveTab] = useState('resume');
+
   return (
     <PageWrapper>
       <Header />
       <div className="my-10 !mb-0 mx-10 md:mx-20 lg:mx-36">
-        <h2 className="text-center text-2xl font-bold">
-          Your Resume Dashboard
-        </h2>
+        <h2 className="text-center text-2xl font-bold">Your Dashboard</h2>
         <p className="text-center text-gray-600">
-          Begin creating and managing your personalized resumes.
+          Manage and organize your resumes and cover letters easily.
         </p>
       </div>
+
+      {/* Tab Selection */}
+      <div className="flex justify-center my-6">
+        <button
+          className={`px-6 py-2 mx-2 rounded ${
+            activeTab === 'resume' ? 'bg-blue-600 text-white' : 'bg-gray-200'
+          }`}
+          onClick={() => setActiveTab('resume')}>
+          Resumes
+        </button>
+        <button
+          className={`px-6 py-2 mx-2 rounded ${
+            activeTab === 'coverletter'
+              ? 'bg-blue-600 text-white'
+              : 'bg-gray-200'
+          }`}
+          onClick={() => setActiveTab('coverletter')}>
+          Cover Letters
+        </button>
+      </div>
+
+      {/* Display Content Based on Selection */}
       <div className="p-10 md:px-24 lg:px-48">
-        <DashboardCards />
+        {activeTab === 'resume' ? <ResumeCards /> : <CoverLetterCards />}
       </div>
     </PageWrapper>
   );
