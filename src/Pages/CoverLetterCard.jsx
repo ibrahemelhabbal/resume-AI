@@ -8,10 +8,10 @@ const CoverLetterCard = ({ coverLetter, onEdit, onDelete }) => {
     <div className="bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 relative group">
       <div className="p-4">
         <h3 className="text-lg font-semibold text-gray-800 truncate">
-          {coverLetter?.title || 'رسالة تغطية بدون عنوان'}
+          {coverLetter?.title || 'match cover letter'}
         </h3>
         <p className="text-sm text-gray-500 mt-1 truncate">
-          {coverLetter?.description || 'لا يوجد وصف متاح'}
+          {coverLetter?.description || 'this is a description'}
         </p>
       </div>
       <div className="absolute top-4 right-4">

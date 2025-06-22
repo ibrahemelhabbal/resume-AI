@@ -7,11 +7,23 @@ const ResumeCards = () => {
   const [resumeList, setResumeList] = useState([]);
   const navigate = useNavigate();
 
-  // تحميل بيانات وهمية
   const loadResumeData = () => {
     const mockResumes = [
-      { id: '1', title: 'السيرة الذاتية 1', description: 'هذا وصف 1' },
-      { id: '2', title: 'السيرة الذاتية 2', description: 'هذا وصف 2' },
+      {
+        id: '1',
+        title: 'Resume 1',
+        description: 'This is a description for Resume 1',
+      },
+      {
+        id: '2',
+        title: 'Resume 2',
+        description: 'This is a description for Resume 2',
+      },
+      {
+        id: '3',
+        title: 'Resume 3',
+        description: 'This is a description for Resume 3',
+      },
     ];
     setResumeList(mockResumes);
   };
@@ -27,7 +39,7 @@ const ResumeCards = () => {
           const newResume = {
             id: Date.now().toString(),
             title,
-            description: 'لا يوجد وصف',
+            description: 'this is a description',
           };
           setResumeList([...resumeList, newResume]);
         }}
@@ -48,7 +60,7 @@ const ResumeCards = () => {
           ))
         ) : (
           <p className="text-center text-gray-600 col-span-full">
-            لا توجد سير ذاتية حتى الآن.
+            their is no resume yet, please add one
           </p>
         )}
       </div>

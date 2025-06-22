@@ -9,6 +9,7 @@ const AddResume = ({ onCreate }) => {
 
   const handleCreate = () => {
     if (resumeName.trim()) {
+      localStorage.removeItem('resumeData');
       onCreate(resumeName);
       setIsModalOpen(false);
       navigate(`/resume-edit/${resumeName}`);
@@ -32,33 +33,31 @@ const AddResume = ({ onCreate }) => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <span className="mt-2">إنشاء سيرة ذاتية جديدة</span>
+          <span className="mt-2">create a new resume</span>
         </button>
       </div>
 
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-50">
           <div className="bg-white rounded-lg p-6 w-96">
-            <h2 className="text-lg font-semibold mb-4">
-              أدخل اسم السيرة الذاتية
-            </h2>
+            <h2 className="text-lg font-semibold mb-4">Enter Resume Name</h2>
             <input
               type="text"
               value={resumeName}
               onChange={e => setResumeName(e.target.value)}
               className="border p-2 w-full mb-4"
-              placeholder="اسم السيرة الذاتية"
+              placeholder="Resume Name "
             />
             <div className="flex justify-between">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-gray-600 hover:text-gray-800">
-                إلغاء
+                cancel
               </button>
               <button
                 onClick={handleCreate}
                 className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                إنشاء
+                create
               </button>
             </div>
           </div>

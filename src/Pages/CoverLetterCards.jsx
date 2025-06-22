@@ -7,11 +7,18 @@ const CoverLetterCards = () => {
   const [coverLetterList, setCoverLetterList] = useState([]);
   const navigate = useNavigate();
 
-  // تحميل بيانات وهمية
   const loadCoverLetterData = () => {
     const mockCoverLetters = [
-      { id: '1', title: 'رسالة تغطية 1', description: 'هذا وصف 1' },
-      { id: '2', title: 'رسالة تغطية 2', description: 'هذا وصف 2' },
+      {
+        id: '1',
+        title: 'cover letter 1',
+        description: 'this is a description 1',
+      },
+      {
+        id: '2',
+        title: 'cover letter 2',
+        description: 'this is a description 2',
+      },
     ];
     setCoverLetterList(mockCoverLetters);
   };
@@ -27,7 +34,7 @@ const CoverLetterCards = () => {
           const newCoverLetter = {
             id: Date.now().toString(),
             title,
-            description: 'لا يوجد وصف',
+            description: 't',
           };
           setCoverLetterList([...coverLetterList, newCoverLetter]);
         }}
@@ -50,7 +57,7 @@ const CoverLetterCards = () => {
           ))
         ) : (
           <p className="text-center text-gray-600 col-span-full">
-            لا توجد رسائل تغطية حتى الآن.
+            their are no cover letters available. Please create a new one.
           </p>
         )}
       </div>
